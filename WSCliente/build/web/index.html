@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="funcionesRut.js" type="text/javascript"></script>
+        <script src="funcionesNombrePropio.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <h1>RUT VERIFICADOR WS-SOAP ඞ</h1>
+        <form id="frmClienteRut">
+            <br>Rut
+            <input type="number" id="txtDigitoRut"/>
+            <br>Digito Verificador
+            <input type="number" id="txtVerificadorRut"/>
+            <input type="submit" value="Evaluar"/> 
+        </form>
+        <table id="tblListRut">    
+        </table> 
+        <form id="frmClienteNombre">
+            <br>Nombre Completo
+            <input type="txt" id="txtNombreCompleto"/>
+            <input type="submit" value="Dividir"/>
+        </form>
+        <table id="tblListNombre">    
+        </table> 
+    </body>
+</html>
