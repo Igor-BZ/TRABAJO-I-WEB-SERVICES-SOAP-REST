@@ -13,14 +13,12 @@ public class RutWebService {
     RutService rutService = new RutService();
     
     @WebMethod(operationName = "insertarRut")
-    public String insertarRut(@WebParam(name = "insertarRut") int ingresaDigitos,int ingresaVerificador) {
+    public String insertarRut(@WebParam(name = "insertarRut") int ingresaDigitos,String ingresaVerificador) {
         return rutService.insertarRut(ingresaDigitos,ingresaVerificador);
     }
 
     @WebMethod(operationName = "listarRut")
-    public List<Rut> listarPais() {
+    public List<Rut> listarRut() {
         return rutService.listarRut();
-    }
-    
+    }   
 }
-

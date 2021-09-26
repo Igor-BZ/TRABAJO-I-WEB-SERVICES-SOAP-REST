@@ -3,10 +3,18 @@ package com.empresa.proyecto.bean;
 public class Rut {
     
     private int digitosRut;
-    private int verificadorRut;
-    private int comparadorRut;
+    private String verificadorRut;
+    private String comparadorRut;
 
     public Rut(){
+    }
+
+    public String getComparadorRut() {
+        return comparadorRut;
+    }
+
+    public void setComparadorRut(String comparadorRut) {
+        this.comparadorRut = comparadorRut;
     }
 
     public int getDigitosRut() {
@@ -17,19 +25,12 @@ public class Rut {
         this.digitosRut = digitosRut;
     }
 
-    public int getVerificadorRut() {
+    public String getVerificadorRut() {
         return verificadorRut;
     }
 
-    public void setVerificadorRut(int verificadorRut) {
+    public void setVerificadorRut(String verificadorRut) {
         this.verificadorRut = verificadorRut;
     }
 
-    public int getComparadorRut() {
-        return comparadorRut;
-    }
-
-    public void setComparadorRut(int comparadorRut) {
-        this.comparadorRut = comparadorRut;
-    }
 }
