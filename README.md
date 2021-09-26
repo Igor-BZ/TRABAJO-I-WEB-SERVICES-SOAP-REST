@@ -1,1 +1,4 @@
 # TRABAJO-I-WEB-SERVICES-SOAP-REST
+Tomcat 8
+NetBeans
+Java 1.8
