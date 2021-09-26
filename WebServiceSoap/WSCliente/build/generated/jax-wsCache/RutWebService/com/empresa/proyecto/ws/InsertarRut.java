@@ -17,7 +17,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="insertarRut" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         &lt;element name="arg1" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="arg1" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -34,7 +34,7 @@ import javax.xml.bind.annotation.XmlType;
 public class InsertarRut {
 
     protected int insertarRut;
-    protected int arg1;
+    protected String arg1;
 
     /**
      * Obtiene el valor de la propiedad insertarRut.
@@ -55,16 +55,24 @@ public class InsertarRut {
     /**
      * Obtiene el valor de la propiedad arg1.
      * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public int getArg1() {
+    public String getArg1() {
         return arg1;
     }
 
     /**
      * Define el valor de la propiedad arg1.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setArg1(int value) {
+    public void setArg1(String value) {
         this.arg1 = value;
     }
 

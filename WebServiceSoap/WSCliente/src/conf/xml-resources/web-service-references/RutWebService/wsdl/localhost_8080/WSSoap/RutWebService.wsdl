@@ -4,31 +4,31 @@
 <xsd:import namespace="http://ws.proyecto.empresa.com/" schemaLocation="http://localhost:8080/WSSoap/RutWebService?xsd=1" />
 </xsd:schema>
 </types>
-<message name="listarRut">
-<part name="parameters" element="tns:listarRut" />
-</message>
-<message name="listarRutResponse">
-<part name="parameters" element="tns:listarRutResponse" />
-</message>
 <message name="insertarRut">
 <part name="parameters" element="tns:insertarRut" />
 </message>
 <message name="insertarRutResponse">
 <part name="parameters" element="tns:insertarRutResponse" />
 </message>
+<message name="listarRut">
+<part name="parameters" element="tns:listarRut" />
+</message>
+<message name="listarRutResponse">
+<part name="parameters" element="tns:listarRutResponse" />
+</message>
 <portType name="RutWebService">
-<operation name="listarRut">
-<input wsam:Action="http://ws.proyecto.empresa.com/RutWebService/listarRutRequest" message="tns:listarRut" />
-<output wsam:Action="http://ws.proyecto.empresa.com/RutWebService/listarRutResponse" message="tns:listarRutResponse" />
-</operation>
 <operation name="insertarRut">
 <input wsam:Action="http://ws.proyecto.empresa.com/RutWebService/insertarRutRequest" message="tns:insertarRut" />
 <output wsam:Action="http://ws.proyecto.empresa.com/RutWebService/insertarRutResponse" message="tns:insertarRutResponse" />
 </operation>
+<operation name="listarRut">
+<input wsam:Action="http://ws.proyecto.empresa.com/RutWebService/listarRutRequest" message="tns:listarRut" />
+<output wsam:Action="http://ws.proyecto.empresa.com/RutWebService/listarRutResponse" message="tns:listarRutResponse" />
+</operation>
 </portType>
 <binding name="RutWebServicePortBinding" type="tns:RutWebService">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
-<operation name="listarRut">
+<operation name="insertarRut">
 <soap:operation soapAction="" />
 <input>
 <soap:body use="literal" />
@@ -37,7 +37,7 @@
 <soap:body use="literal" />
 </output>
 </operation>
-<operation name="insertarRut">
+<operation name="listarRut">
 <soap:operation soapAction="" />
 <input>
 <soap:body use="literal" />

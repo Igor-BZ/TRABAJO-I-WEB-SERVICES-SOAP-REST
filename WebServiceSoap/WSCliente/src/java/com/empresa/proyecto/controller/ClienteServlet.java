@@ -25,7 +25,7 @@ public class ClienteServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
          int digitoRut = Integer.parseInt(request.getParameter("digiRut"));
-         int verificadoRut = Integer.parseInt(request.getParameter("veriRut"));
+         String verificadoRut = request.getParameter("veriRut");
          insertarRut(digitoRut,verificadoRut);
          response.setContentType("text/plain");
          response.getWriter().write("Datos Ingresados");
@@ -36,7 +36,7 @@ public class ClienteServlet extends HttpServlet {
         return "Short description";
     }
 
-    private static String insertarRut(int insertarRut, int arg1) {
+    private static String insertarRut(int insertarRut, java.lang.String arg1) {
         com.empresa.proyecto.ws.RutWebService_Service service = new com.empresa.proyecto.ws.RutWebService_Service();
         com.empresa.proyecto.ws.RutWebService port = service.getRutWebServicePort();
         return port.insertarRut(insertarRut, arg1);
@@ -48,3 +48,4 @@ public class ClienteServlet extends HttpServlet {
         return port.listarRut();
     }
 }
+    

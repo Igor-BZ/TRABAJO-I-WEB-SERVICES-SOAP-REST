@@ -26,6 +26,22 @@
             <isset property="conf.dir"/>
         </condition>
     </target>
+    <target name="wsimport-client-NombrePropioWebService" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/NombrePropioWebService"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/NombrePropioWebService" destdir="${build.generated.dir}/jax-wsCache/NombrePropioWebService" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/NombrePropioWebService/wsdl/localhost_8080/WSSoap/NombrePropioWebService.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/WSSoap/NombrePropioWebService?wsdl" xnocompile="true" xendorsed="true" package="com.empresa.proyecto.wsnom">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/NombrePropioWebService/wsdl/localhost_8080/WSSoap/NombrePropioWebService.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/NombrePropioWebService"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/NombrePropioWebService">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-NombrePropioWebService" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/empresa/proyecto/wsnom"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/NombrePropioWebService"/>
+    </target>
     <target name="wsimport-client-RutWebService" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/RutWebService"/>
         <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/RutWebService" destdir="${build.generated.dir}/jax-wsCache/RutWebService" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/RutWebService/wsdl/localhost_8080/WSSoap/RutWebService.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/WSSoap/RutWebService?wsdl" xnocompile="true" xendorsed="true" package="com.empresa.proyecto.ws">
@@ -42,5 +58,5 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/com/empresa/proyecto/ws"/>
         <delete dir="${build.generated.dir}/jax-wsCache/RutWebService"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-RutWebService"/>
+    <target name="wsimport-client-generate" depends="wsimport-client-NombrePropioWebService, wsimport-client-RutWebService"/>
 </project>

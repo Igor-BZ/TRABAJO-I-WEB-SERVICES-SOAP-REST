@@ -27,18 +27,6 @@ public interface RutWebService {
 
     /**
      * 
-     * @return
-     *     returns java.util.List<com.empresa.proyecto.ws.Rut>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "listarRut", targetNamespace = "http://ws.proyecto.empresa.com/", className = "com.empresa.proyecto.ws.ListarRut")
-    @ResponseWrapper(localName = "listarRutResponse", targetNamespace = "http://ws.proyecto.empresa.com/", className = "com.empresa.proyecto.ws.ListarRutResponse")
-    @Action(input = "http://ws.proyecto.empresa.com/RutWebService/listarRutRequest", output = "http://ws.proyecto.empresa.com/RutWebService/listarRutResponse")
-    public List<Rut> listarRut();
-
-    /**
-     * 
      * @param insertarRut
      * @param arg1
      * @return
@@ -53,6 +41,18 @@ public interface RutWebService {
         @WebParam(name = "insertarRut", targetNamespace = "")
         int insertarRut,
         @WebParam(name = "arg1", targetNamespace = "")
-        int arg1);
+        String arg1);
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<com.empresa.proyecto.ws.Rut>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "listarRut", targetNamespace = "http://ws.proyecto.empresa.com/", className = "com.empresa.proyecto.ws.ListarRut")
+    @ResponseWrapper(localName = "listarRutResponse", targetNamespace = "http://ws.proyecto.empresa.com/", className = "com.empresa.proyecto.ws.ListarRutResponse")
+    @Action(input = "http://ws.proyecto.empresa.com/RutWebService/listarRutRequest", output = "http://ws.proyecto.empresa.com/RutWebService/listarRutResponse")
+    public List<Rut> listarRut();
 
 }
